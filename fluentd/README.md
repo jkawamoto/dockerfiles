@@ -26,7 +26,8 @@ This mode requires
 
 ```sh
 $ docker run -d --name fluentd-server --link <mongodb>:mongo \
-             -e USER=<user> -e PASSWORD=<password>
+             -e USER=<user> -e PASSWORD=<password> \
+             jkawamoto/fluentd server
 ```
 
 ### Client mode
@@ -38,7 +39,8 @@ This mode requires
 ```sh
 $ docker run -d --name fluentd-client --link fluentd-server:fluentd \
              -v /var/lib/docker/containers:/var/lib/docker/containers \
-             -e HOSTNAME=<some identifier>
+             -e HOSTNAME=<some identifier> \
+             jkawamoto/fluentd client
 ```
 
 License
