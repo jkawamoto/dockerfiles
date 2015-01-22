@@ -9,7 +9,7 @@
 # http://opensource.org/licenses/mit-license.php
 #
 set -m
-mongod --auth &
+mongod &
 sleep 5
 
 cat <<EOF > admin.js
@@ -40,5 +40,9 @@ if(!has_user){
 EOF
 
 mongo admin admin.js
-fg
+
+kill %1
+wait
+
+mongod --auth
 
