@@ -14,7 +14,9 @@ case "$1" in
 
 		ADDR=${MONGO_PORT#*//}
 		HOST=${ADDR%:*}
-		PORT=${ADDR#*:}
+		if [ ! -v PORT ]; then
+			PORT=${ADDR#*:}
+		fi
 
 		cat <<EOF > fluent.conf
 <source>
@@ -52,7 +54,9 @@ EOF
 
 		ADDR=${FLUENTD_PORT#*//}
 		HOST=${ADDR%:*}
-		PORT=${ADDR#*:}
+		if [ ! -v PORT ]; then
+			PORT=${ADDR#*:}
+		fi
 
 		cat <<EOF > fluent.conf
 <source>
@@ -76,7 +80,7 @@ EOF
   type forward
 
   <server>
-    name $FLUENTD_PORT
+    name $HOST
     host $HOST
     port $PORT
   </server>

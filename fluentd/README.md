@@ -43,6 +43,9 @@ $ docker run -d --name fluentd-client --link fluentd-server:fluentd \
              jkawamoto/fluentd client
 ```
 
+It also takes environment variable `PORT`.
+You can specify server's listing port with this variable.
+
 License
 --------
 This software is released under the MIT License, see LICENSE.

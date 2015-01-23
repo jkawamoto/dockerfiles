@@ -15,6 +15,7 @@ FROM kiyoto/docker-fluentd
 MAINTAINER Junpei Kawamoto <kawamoto.junpei@gmail.com>
 
 RUN ["fluent-gem", "install", "fluent-plugin-mongo"]
+RUN ["gem", "install", "bson_ext"]
 
 WORKDIR /root
 ADD entrypoint.sh /root/
