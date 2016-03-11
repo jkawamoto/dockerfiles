@@ -6,7 +6,8 @@
 # This software is released under the MIT License.
 #
 # http://opensource.org/licenses/mit-license.php
-#FROM resin/rpi-raspbian:jessie
+#
+FROM resin/rpi-raspbian:jessie
 MAINTAINER Junpei Kawamoto <kawamoto.junpei@gmail.com>
 
 # Install node.js.
