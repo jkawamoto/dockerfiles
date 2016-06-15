@@ -1,0 +1,6 @@
+%% Start up script.
+prev = pwd
+cd /root/sdpt3
+install_sdpt3
+
+cd(prev)
