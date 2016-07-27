@@ -2,6 +2,9 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Dockerhub](https://img.shields.io/badge/dockerhub-jkawamoto%2Farmhf--apt--cacher--ng-blue.svg)](https://hub.docker.com/r/jkawamoto/armhf-apt-cacher-ng/)
 
+Docker image of [Apt-Cacher NG](https://www.unix-ag.uni-kl.de/~bloch/acng/)
+for ARM computer.
+
 ## Installation
 ```sh
 docker pull jkawamoto/armhf-apt-cacher-ng
@@ -19,4 +22,6 @@ then, set the proxy address apt's configuration file by running,
 echo "Acquire::http { Proxy \"http://xxx.xxx.xxx.xxx:3142\"; };" >>  /etc/apt/apt.conf.d/01proxy;
 ```
 where `xxx.xxx.xxx.xxx` is the host IP address
-where armhf-apt-cacher-ng is running.
+where `armhf-apt-cacher-ng` is running.
+
+Use apt-get command. It will be routed to the cacher server.
