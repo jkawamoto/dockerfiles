@@ -10,7 +10,7 @@ docker pull jkawamoto/armhf-apt-cacher-ng
 ## Usage
 Start apt-cacher-ng by running,
 ```sh
-docker run -d 3142:3142 jkawamoto/armhf-apt-cacher-ng
+docker run -d -p 3142:3142 jkawamoto/armhf-apt-cacher-ng
 ```
 
 then, set the proxy address apt's configuration file by running,
