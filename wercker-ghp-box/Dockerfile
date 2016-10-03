@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM vt100
 
 RUN apt-get update && \
-    apt-get install -y apt-utils python python-pip python-dev wget curl git ssh-client && \
+    apt-get install -y apt-utils python python-pip python-dev wget curl git ssh-client graphviz && \
     apt-get upgrade -y && apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/
 RUN pip install --upgrade pip ghp-import
