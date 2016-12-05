@@ -9,6 +9,7 @@ This repository includes
   - Octave with SDPT3.
   - Apt-Cacher NG for ARM computer.
   - Devpi Server for ARM computer.
+  - A Wercker Box for Deploying to GitHub Pages.
 
 License
 --------
