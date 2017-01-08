@@ -1,7 +1,7 @@
 #
 # Dockerfile
 #
-# Copyright (c) 2015-2016 Junpei Kawamoto
+# Copyright (c) 2015-2017 Junpei Kawamoto
 #
 # This software is released under the MIT License.
 #
@@ -26,6 +26,7 @@ RUN apt-get update && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/
 
 EXPOSE 3142
+VOLUME /var/cache/apt-cacher-ng
 
 ADD entrypoint.sh /root
 ENTRYPOINT ["bash", "/root/entrypoint.sh"]
