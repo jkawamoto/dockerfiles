@@ -1,7 +1,7 @@
 #
 # Dockerfile
 #
-# Copyright (c) 2015-2016 Junpei Kawamoto
+# Copyright (c) 2015-2017 Junpei Kawamoto
 #
 # This software is released under the MIT License.
 #
@@ -39,6 +39,7 @@ RUN apt-get update && \
 RUN pip3 install -q -U pip devpi-server
 
 EXPOSE 3141
+VOLUME /var/cache/devpi
 
 ADD entrypoint.sh /root
 ENTRYPOINT ["bash", "/root/entrypoint.sh"]

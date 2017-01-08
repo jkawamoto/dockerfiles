@@ -11,12 +11,15 @@ docker pull jkawamoto/armhf-devpi-server
 ```
 
 ## Usage
-Start devpi server by running,
+Start devpi server by
 ```sh
 docker run -d -p 3141:3141 jkawamoto/armhf-devpi-server
 ```
 
-then, set the proxy address in pip configuration file `~/.pip/pip.conf`,
+If you want to keep cache files out of the container,
+mount a diretcoty to `/var/cache/devpi`.
+
+Then, set the proxy address in pip configuration file `~/.pip/pip.conf`,
 
 ```pip.conf
 [global]
@@ -24,7 +27,7 @@ index-url=http://xxx.xxx.xxx.xxx:3141/root/pypi
 trusted-host=xxx.xxx.xxx.xxx
 ```
 
-where `xxx.xxx.xxx.xxx` is the host IP address
+Note that `xxx.xxx.xxx.xxx` is the IP address of host computer
 where `armhf-devpi-server` is running.
 
 Use `pip` command. It will use the devpi server.
